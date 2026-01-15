@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Contatos Internos</title>
+
+    <!-- Ícone da aba -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="Logo da Empresa">
+    <h1>Contatos Internos</h1>
+</header>
+
+<input 
+    type="text" 
+    id="searchInput" 
+    placeholder="Pesquisar por nome, setor, localização, rádio ou ramal..."
+    onkeyup="searchTable()"
+>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Setor</th>
+            <th>Localização</th>
+            <th>Rádio</th>
+            <th>Ramal</th>
+        </tr>
+    </thead>
+    <tbody id="contactTable"></tbody>
+</table>
+
+<script>
+    // 👇 CADASTRO DOS CONTATOS (EDITA AQUI)
+    const contatos = [
+        {
+            nome: "João Silva",
+            setor: "Manutenção",
+            localizacao: "Bloco A",
+            radio: "Faixa 3 / Rádio 12",
+            ramal: "203"
+        },
+        {
+            nome: "Maria Santos",
+            setor: "RH",
+            localizacao: "Bloco B",
+            radio: "Faixa 1 / Rádio 5",
+            ramal: "110"
+        },
+        {
+            nome: "Carlos Lima",
+            setor: "TI",
+            localizacao: "Sala 12",
+            radio: "Faixa 2 / Rádio 8",
+            ramal: "150"
+        }
+    ];
+
+    function renderTable(data) {
+        const table = document.getElementById("contactTable");
+        table.innerHTML = "";
+
+        data.forEach(c => {
+            const row = `
+                <tr>
+                    <td>${c.nome}</td>
+                    <td>${c.setor}</td>
+                    <td>${c.localizacao}</td>
+                    <td>${c.radio}</td>
+                    <td>${c.ramal}</td>
+                </tr>
+            `;
+            table.innerHTML += row;
+        });
+    }
+
+    function searchTable() {
+        const value = document.getElementById("searchInput").value.toLowerCase();
+
+        const filtered = contatos.filter(c =>
+            c.nome.toLowerCase().includes(value) ||
+            c.setor.toLowerCase().includes(value) ||
+            c.localizacao.toLowerCase().includes(value) ||
+            c.radio.toLowerCase().includes(value) ||
+            c.ramal.toLowerCase().includes(value)
+        );
+
+        renderTable(filtered);
+    }
+
+    // Render inicial
+    renderTable(contatos);
+</script>
+
+</body>
+</html>
