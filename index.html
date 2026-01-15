@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Lista de Ramais</title>
 
-    <!-- Ícone da aba -->
     <link rel="icon" href="https://raw.githubusercontent.com/shUrazindev/ram/refs/heads/main/icon.ico" type="image/x-icon">
 
     <style>
@@ -106,7 +105,7 @@ tr:hover td {
     <input 
         type="text" 
         id="searchInput" 
-        placeholder="Pesquisar por nome, setor, localização, rádio ou ramal..."
+        placeholder="Pesquisar..."
         onkeyup="searchTable()"
 >
 
@@ -124,12 +123,8 @@ tr:hover td {
 </table>
 </div>
 
-<footer>
-  © 2026 shUrazin
-</footer>
-
 <script>
-    // 👇 CADASTRO DOS CONTATOS (EDITA AQUI)
+    // 👇 CADASTRO DOS CONTATOS (EDITAR AQUI!)
     const contatos = [
         {
             nome: "Adão",
@@ -173,6 +168,83 @@ tr:hover td {
             radio: "N/A",
             ramal: "6421"
         },
+         {
+            nome: "EPI",
+            setor: "Almoxarifado",
+            localizacao: "Indústria",
+            radio: "N/A",
+            ramal: "4046"
+        },
+        {
+            nome: "N/A",
+            setor: "Almoxarifado",
+            localizacao: "Agrícola",
+            radio: "N/A",
+            ramal: "4195"
+        },
+        {
+            nome: "Antônio Carlos",
+            setor: "Ger. de Planejamento Agrícola",
+            localizacao: "Agrícola",
+            radio: "N/A",
+            ramal: "6475"
+        },
+        {
+            nome: "Antônio Carlos (EPI)",
+            setor: "Almoxarifado",
+            localizacao: "Agrícola",
+            radio: "N/A",
+            ramal: "4077"
+        },
+        {
+            nome: "Ana Paula",
+            setor: "Controle Agrícola",
+            localizacao: "Agrícola",
+            radio: "N/A",
+            ramal: "6481"
+        },
+        {
+            nome: "Adriana / Flávia",
+            setor: "Ger. de Planejamento Agrícola",
+            localizacao: "Agrícola",
+            radio: "Faixa 2 / 01",
+            ramal: "6469"
+        },
+        {
+            nome: "N/A",
+            setor: "Balança",
+            localizacao: "Indústria",
+            radio: "N/A",
+            ramal: "6442"
+        },
+        {
+            nome: "N/A",
+            setor: "Balcão",
+            localizacao: "Indústria",
+            radio: "N/A",
+            ramal: "6420"
+        },
+        {
+            nome: "Benedito Barbosa",
+            setor: "Diretor Industrial",
+            localizacao: "Indústria",
+            radio: "N/A",
+            ramal: "6422"
+        },
+        {
+            nome: "Claudicene / Maria",
+            setor: "Recepção Industrial",
+            localizacao: "Indústria",
+            radio: "N/A",
+            ramal: "9 / 6401"
+        },
+        {
+            nome: "Carlos / Murilo / Ronaldo",
+            setor: "Folha de Pagamento",
+            localizacao: "Indústria",
+            radio: "N/A",
+            ramal: "6452"
+        },
     ];
 
     function renderTable(data) {
@@ -207,13 +279,13 @@ tr:hover td {
         renderTable(filtered);
     }
 
-    // Render inicial
     renderTable(contatos);
 </script>
 
 </body>
 
 </html>
+
 
 
 
