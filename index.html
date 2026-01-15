@@ -8,55 +8,92 @@
     <link rel="icon" href="https://raw.githubusercontent.com/shUrazindev/ram/refs/heads/main/icon.ico" type="image/x-icon">
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            margin: 0;
-            padding: 20px;
-        }
+       * {
+    box-sizing: border-box;
+}
 
-        header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f2f4f7;
+    margin: 0;
+    padding: 30px 0;
+    color: #2c3e50;
+}
 
-        header img {
-            height: 60px;
-        }
+header {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto 25px auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
 
-        h1 {
-            margin: 0;
-        }
+header img {
+    height: 52px;
+}
 
-         input { 
-            width: 99%;
-            padding: 10px;
-            margin-bottom: 15px;
-            font-size: 15px;
-        }
+header h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-        }
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 20px 24px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
 
-        th, td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
+input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
 
-        th {
-            background: #6b6b6b;
-            color: white;
-        }
+input::placeholder {
+    color: #9aa0a6;
+}
 
-        tr:hover {
-            background: #dddddd;
-        }
+input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #f8fafc;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 12px 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+td {
+    padding: 12px 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+tr:hover td {
+    background: #f9fafb;
+}
     </style>
 </head>
 <body>
@@ -65,11 +102,12 @@
     <img src="https://raw.githubusercontent.com/shUrazindev/ram/refs/heads/main/logo.png" alt="Logo">
 </header>
 
-<input 
-    type="text" 
-    id="searchInput" 
-    placeholder="Pesquisar por nome, setor, localização, rádio ou ramal..."
-    onkeyup="searchTable()"
+<div class="container">    
+    <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Pesquisar por nome, setor, localização, rádio ou ramal..."
+        onkeyup="searchTable()"
 >
 
 <table>
@@ -84,6 +122,7 @@
     </thead>
     <tbody id="contactTable"></tbody>
 </table>
+</div>
 
 <script>
     // 👇 CADASTRO DOS CONTATOS (EDITA AQUI)
@@ -171,6 +210,7 @@
 </body>
 
 </html>
+
 
 
 
